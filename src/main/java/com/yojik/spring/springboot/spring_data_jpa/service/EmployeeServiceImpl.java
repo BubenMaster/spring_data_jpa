@@ -38,4 +38,10 @@ public class EmployeeServiceImpl implements EmployeeService {
       if (!optionalEmployee.isPresent()){throw new NoSuchElementException();}
           return optionalEmployee.get();
     }
+
+    @Override
+    public List<Employee> findAllByNameStartsWith(String nameStartsWith) {
+        List<Employee> employees = employeeRepository.findAllByNameStartsWith(nameStartsWith);
+        return employees;
+    }
 }

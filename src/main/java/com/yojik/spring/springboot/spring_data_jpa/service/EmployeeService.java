@@ -17,4 +17,6 @@ public interface EmployeeService {
     Employee getEmployee(int id);
 
     void deleteEmployee(int id);
+
+    public List<Employee> findAllByNameStartsWith(String nameStartsWith);
 }

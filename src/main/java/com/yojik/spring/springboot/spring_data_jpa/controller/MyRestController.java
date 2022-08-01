@@ -50,4 +50,11 @@ public class MyRestController {
         return "Employee with id " + id + " was erased";
     }
 
+    @GetMapping("/employees/name_starts_with/{nameStartsWith}")
+    public  List<Employee> showAllEmployeesNameStartsWith(@PathVariable("nameStartsWith") String nameStartsWith) {
+        List<Employee> employees = employeeService.findAllByNameStartsWith(nameStartsWith);
+        return  employees;
+
+    }
+
 }
